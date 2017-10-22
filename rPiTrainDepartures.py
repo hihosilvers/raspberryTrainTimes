@@ -62,8 +62,6 @@ colours = [(0x26, 0xFF, 0x82),
 coords = coordinates.diagonal(8)
 
 ###################################################################################################
-# An example of getting a regular departure board.
-
 # Instantiate the web service session.
 session = Session(API_URL, API_KEY)
 
@@ -130,6 +128,7 @@ while True:
             tracker = 0
 
             # if a train has just left the station (or if this is our first run):
+            # (of if the first train has become delayed)
             # cue animation
             if prevFirstTrainIn < shiftedMinsList[0]:
                 for coord in reversed(coords):
@@ -176,6 +175,7 @@ while True:
                             break
                     if tracker == coordsLength:
                         break
+                # if we don't have more trains, backfill LED's to black
                 while tracker < coordsLength:
                     x = coords[tracker][0]
                     y = coords[tracker][1]
