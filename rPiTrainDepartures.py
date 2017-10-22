@@ -107,11 +107,7 @@ while True:
                     timeSplitHour += 24
                 minToThisTrain = timeSplitHour * 60 + int(timeSplit[1]) - timeNowInMin
                 minToNextTrains.append(minToThisTrain)
-            print("    {} to {}: due {}.".format(
-                service.std,
-                service.destination,
-                service.etd
-            ))
+            print(f"    {service.std} to {service.destination}: due {service.etd}.")
 
         # try to process train departure times, except not train departure times returned, pass
         try:
