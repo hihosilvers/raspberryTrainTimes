@@ -15,7 +15,7 @@ import coordinates
 # Set up the address for the LDBWS server.
 API_URL = "https://lite.realtime.nationalrail.co.uk/OpenLDBWS/wsdl.aspx?ver=2017-02-02"
 
-# Get the API key from the environment
+# Get the API key and train from / to from the environment
 try:
     API_KEY = environ['NRE_LDBWS_API_KEY']
     FROM_STATION = environ['FROM_STATION']
@@ -109,7 +109,7 @@ while True:
                 minToNextTrains.append(minToThisTrain)
             print(f"    {service.std} to {service.destination}: due {service.etd}.")
 
-        # try to process train departure times, except not train departure times returned, pass
+        # try to process train departure times, except no train departure times returned
         try:
             # remove the minutes already counted from each train
             minToNextTrains.sort()
