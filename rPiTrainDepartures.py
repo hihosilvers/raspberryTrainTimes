@@ -35,7 +35,7 @@ except KeyError:
 # init unicorn
 unicorn.set_layout(unicorn.AUTO)
 unicorn.rotation(270)
-unicorn.brightness(0.38)
+unicorn.brightness(0.34)
 width, height = unicorn.get_shape()
 
 # create a list of colours we'll use to show the minutes until the next train
