@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi3-alpine-python:latest
+FROM balenalib/raspberrypi3-alpine-python:3.7.2-run
 
 # Enable OpenRC
 ENV INITSYSTEM on

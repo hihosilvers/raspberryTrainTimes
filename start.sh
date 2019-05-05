@@ -1,1 +1,1 @@
-python3 rPiTrainDepartures.py
+python rPiTrainDepartures.py
