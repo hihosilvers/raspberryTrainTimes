@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi-python:3
+FROM balenalib/raspberrypi3-alpine-python:latest
 
 # Enable OpenRC
 ENV INITSYSTEM on
@@ -7,7 +7,7 @@ ENV INITSYSTEM on
 # pip install python deps from requirements.txt
 # For caching until requirements.txt changes
 COPY ./requirements.txt /requirements.txt
-RUN pip3 install -r /requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
